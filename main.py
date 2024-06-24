@@ -52,7 +52,7 @@ def get_browser_tab_details(browser: Browser) -> Tuple[Optional[str], Optional[s
 # Function to store window information in the SQLite database
 def store_window_info(db_conn:Any, window_name:str, url:Optional[str], title:Optional[str]) -> None:
     cursor = db_conn.cursor()
-    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    timestamp = int(time.time())
     print("inserting with timestamp", timestamp, "window_name", window_name, "url", url, "title", title)
     cursor.execute("INSERT INTO window_info (timestamp, window_name, url, title) VALUES (?, ?, ?, ?)",
                    (timestamp, window_name, url, title))
@@ -73,7 +73,7 @@ def main() -> None:
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS window_info (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            timestamp TEXT NOT NULL,
+            timestamp INTEGER NOT NULL,
             window_name TEXT NOT NULL,
             url TEXT,
             title TEXT
