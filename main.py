@@ -4,7 +4,7 @@ import subprocess
 import time
 import sqlite3
 from datetime import datetime
-from models import Browser
+from .models import Browser
 
 # Function to get active tab details from Brave Browser using AppleScript
 def get_browser_tab_details(browser: Browser) -> Tuple[Optional[str], Optional[str]]:
