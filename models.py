@@ -1,4 +1,6 @@
 from enum import Enum
+from pydantic import BaseModel
+from typing import Optional
 
 class Browser(Enum):
     SAFARI = 'Safari'
@@ -7,3 +9,6 @@ class Browser(Enum):
     BRAVE = 'Brave Browser'
     EDGE = 'Microsoft Edge'
 
+class WindowData(BaseModel):
+    application_name: str
+    title: str

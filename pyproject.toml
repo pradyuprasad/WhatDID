@@ -8,6 +8,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+pyobjc = "^10.3.1"
+pydantic = "^2.8.2"
 
 
 [build-system]
