@@ -10,5 +10,5 @@ class Browser(Enum):
     EDGE = 'Microsoft Edge'
 
 class WindowData(BaseModel):
-    application_name: str
-    title: str
+    application_name: Optional[str]
+    title: Optional[str]

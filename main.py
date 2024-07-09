@@ -4,9 +4,9 @@ from typing import List, Optional
 from sqlite3 import Connection, Cursor
 import subprocess
 from subprocess import CompletedProcess
-from AppKit import NSWorkspace, NSRunningApplication, NSApplicationActivationPolicyRegular
+from AppKit import NSWorkspace, NSRunningApplication, NSApplicationActivationPolicyRegular # type : ignore
 import time
-from models import WindowData, Browser
+from models import WindowData
 
 
 
@@ -102,10 +102,10 @@ def get_active_window() -> WindowData:
 
 
 
-def main():
+def main() -> None:
     create_tables()
     while True:
-        currWindownData:WindowData =  get_active_window()
+        #currWindownData:WindowData =  get_active_window()
         time.sleep(1)
 
 
